@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegisterForm</title>
+</head>
+<body>
+    <h1>Welcome to signup portal</h1>
+    <form action="register" method="post">
+        {% csrf_token %}
+        <input type="text" name="first_name" placeholder="First Name"><br/>
+        <input type="text" name="last_name" placeholder="Last Name"><br/>
+        <input type="file" name="profile_picture" placeholder="Profile Picture"><br/>
+        <input type="text" name="username" placeholder="Username"><br/>
+        <input type="email" name="email_id" placeholder="Email Id"><br/>
+        <input type="text" name="password1" placeholder="Password"><br/>
+        <input type="text" name="password2" placeholder="Password Confirm"><br/>
+        <h5>Address</h5><br/>
+        <input type="text" name="line1" placeholder="Line1"><br/>
+        <input type="text" name="city" placeholder="City"><br/>
+        <input type="text" name="state" placeholder="State"><br/>
+        <input type="text" name="pincode" placeholder="Pincode"><br/>
+        <button>Submit</button>
+    </form>
+
+    <div>
+        
+            {% for messages in messages %}
+            <h5>{{messages}}</h5>
+            
+            {% endfor %}
+       
+    </div>
+</body>
+</html>
